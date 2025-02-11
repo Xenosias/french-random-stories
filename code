@@ -1,0 +1,30 @@
+import random
+
+# Listes d'éléments pour construire l'histoire
+noms = ["Alice", "Bob", "Charlie", "Diana", "Eve", "Frank", "Grace", "Hank"]
+lieux = ["une forêt enchantée", "une ville futuriste", "une montagne mystérieuse", "un désert aride", "un château abandonné"]
+actions = ["combattre un dragon", "résoudre une énigme", "trouver un trésor caché", "explorer une grotte sombre", "sauver un ami en danger"]
+evenements = ["soudain, une tempête éclata", "un étrange personnage apparut", "un mystérieux message fut découvert", "le sol commença à trembler"]
+fin = ["et vécurent heureux pour toujours.", "mais le mystère resta entier.", "et le monde fut changé à jamais.", "et ils devinrent des légendes."]
+
+def generer_histoire():
+    # Choix aléatoires des éléments
+    nom = random.choice(noms)
+    lieu = random.choice(lieux)
+    action = random.choice(actions)
+    evenement = random.choice(evenements)
+    fin_histoire = random.choice(fin)
+    
+    # Construction de l'histoire
+    histoire = f"Il était une fois {nom}, qui se trouvait dans {lieu}. "
+    histoire += f"{nom} décida de {action}. "
+    histoire += f"Alors qu'{nom} était occupé(e), {evenement}. "
+    histoire += f"Finalement, {nom} réussit à accomplir sa mission, {fin_histoire}"
+    
+    return histoire
+
+# Exemple d'utilisation
+if __name__ == "__main__":
+    histoire = generer_histoire()
+    print("Histoire générée :\n")
+    print(histoire)
